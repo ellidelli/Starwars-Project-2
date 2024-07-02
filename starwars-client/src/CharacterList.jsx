@@ -9,7 +9,7 @@ const CharacterList = (props) => {
     }
     return(
         <div>
-            <Link to='/api/characters/{props.data.id}'>{props.data.name}</Link>
+            <Link to={`/api/characters/${props.data.id}`}>{props.data.name}</Link>
         </div>
     );
 }
