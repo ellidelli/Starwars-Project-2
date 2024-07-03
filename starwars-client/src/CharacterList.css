@@ -1,0 +1,16 @@
+.button-container{
+    display: flex;
+    flex-wrap: wrap;
+}
+.button-container > .character{
+    margin: 20px;
+    outline: 2px solid;
+    border-radius: 10px;
+}
+.button-container > .character > a {
+    text-decoration: none;
+    padding: 20px;
+    color: black;
+    border-radius: 5px;
+}
+
