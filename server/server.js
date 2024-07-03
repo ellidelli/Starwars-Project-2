@@ -65,9 +65,7 @@ app.get('/api/films/:id/characters', async (req, res) => {
        const client = await MongoClient.connect(url);
        const db = client.db(dbName);
        const collection = db.collection("films_characters")
-      // const films_characters = await collection.find({ id: parseInt(id) }).toArray();
        const films_characters = await collection.find({ film_id: parseInt(id) }).toArray();
-
        res.json(films_characters);
        console.log(films_characters)
     } catch (err) {
@@ -83,7 +81,6 @@ app.get('/api/films/:id/planets', async (req, res) => {
        const db = client.db(dbName);
        const collection = db.collection("films_planets")
        const films_planets = await collection.find({ film_id: parseInt(id) }).toArray();
-
        res.json(films_planets);
        console.log(films_planets)
     } catch (err) {
