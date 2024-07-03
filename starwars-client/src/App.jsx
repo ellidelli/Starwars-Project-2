@@ -3,6 +3,8 @@ import CharacterList from './CharacterList';
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Home from './Home';
 import Character from './Character';
+import Planet from './Planet';
+import Film from './Film';
 
 function App() {
   const [data, setData] = useState([]);
@@ -29,6 +31,9 @@ function App() {
           <Route path='/' element={<Home data={data}/>}>
           </Route>
           <Route path='character/:id' element={<Character/>}>
+          </Route>
+          <Route path ='planet/:id' element={<Planet/>}>
+          <Route path ='films/:id'element={<Film/>}></Route>
           </Route>
         </Routes>
       </BrowserRouter>
