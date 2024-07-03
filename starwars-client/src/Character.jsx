@@ -1,8 +1,7 @@
 import React from "react";
 import { useState, useEffect } from 'react';
 import { useParams } from "react-router-dom";
-
-
+import './Character.css';
 
 const Character = () => {
     const { id } = useParams()
@@ -67,22 +66,31 @@ const Character = () => {
     
     return (
         <>
-            {loading ? (
-                <h1>loading...</h1>
-            ) : (<>
-                <h1>{data[0].name}</h1>
-                    <h3>Height: {data[0].height} cm</h3>
-                    <h3>Mass: {data[0].mass} kg</h3>
-                    <h3>Born: {data[0].birth_year}</h3>
-                <h2>Homeworld</h2>
-
-                <h2>Films Appeared in</h2>
-
-                
-            </>)}
+            <div className="button-container">
+                <div className="character">
+                    {loading ? (
+                        <h1>loading...</h1>
+                    ) : (
+                        data && data.length > 0 && (
+                            <>
+                                <h1>{data[0].name}</h1>
+                                <div className="character-details">
+                                    <h3 className="button">Height: {data[0].height} cm</h3>
+                                    <h3 className="button">Mass: {data[0].mass} kg</h3>
+                                    <h3 className="button">Born: {data[0].birth_year}</h3>
+                                </div>
+                                <h2>Homeworld</h2>
+                                <h2>Films Appeared in</h2>
+                            </>
+                        )
+                    )}
+                </div>
+            </div>
         </>
-
-    )
+    );
+    
+    
+    
 }
 
 export default Character;
